@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "e769d2f99a",
+      "name": "entry",
+      "onEnter": [
+        "say #!bhadwa-2moA_I"
+      ],
+      "onReceive": [
+        "yourCustomAction {\"name\":\"{{event.text}}\",\"sadfghjklhgfdszxfghjk\":\"apple\"}",
+        "say #!builtin_text-TizibN"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "save_the_name"
+        }
+      ]
+    },
+    {
+      "id": "36200440cd",
+      "name": "save_the_name",
+      "next": [
+        {
+          "condition": "{{event.text != null}}",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-CJvuLW"
+      ],
+      "onReceive": [
+        "saveTheName {\"name\":\"{{event.text}}\"}",
+        "say #!builtin_text-bhz_Ux"
+      ]
+    }
+  ]
+}
