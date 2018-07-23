@@ -1,10 +1,10 @@
 module.exports = {
-    id: 'bhadwa',
-    title : 'maa ki choo',
-    renderer : '#renderer1',
+    id: 'customText',
+    title : 'create your customText',
+    renderer : '#customText',
 
     jsonSchema : {
-        title : 'make new message ma ki choo',
+        title : 'make new customText',
         type : 'object',
         properties : {
             text : {

@@ -46,7 +46,15 @@ module.exports = async bp => {
   ////////////////////////////
 
   // All events that should be processed by the Flow Manager
+  bp.hear({ type: '/test/i'}, (event, next) => {
+    console.log("sending proactive trigger to ")
+
+      next()
+  })
+
+
   bp.hear({ type: /bp_dialog_timeout|text|message|quick_reply/i }, (event, next) => {
+    console.log("Inside text and message");
     bp.dialogEngine.processMessage(event.sessionId || event.user.id, event).then()
   })
 }
@@ -69,4 +77,6 @@ async function registerBuiltin(bp) {
 
   // Register all the built-in actions
   bp.dialogEngine.registerActions(builtinActions)
+
+
 }

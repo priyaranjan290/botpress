@@ -4,13 +4,6 @@
  * @param  {Number} [params.age] Optional parameter
  */
 async function yourCustomAction(state, event, args) {
-    console.log(state)
-    console.log("printed state")
-    console.log(event)
-    console.log("printed event")
-    console.log(args)
-    console.log("printed params")
-
     const c = {...state}
     console.log(c)
     return c;
@@ -42,6 +35,22 @@ async function saveTheName(state, event, args) {
 }
 
 
+async function getUserInfoFromPrime(state, event, {userId}) {
+    console.log("inside get user info" + userId)
+    var primeProdUrl = "http://pilot-tracking-prod.ap-southeast-1.elasticbeanstalk.com/api/v1/pilot?userId=" + userId
+
+    try {
+        var x  = await event.bp.axios.get(primeProdUrl)
+        console.log(x)
+    } catch (e) {
+        console.error(e)
+    }
+
+}
 
 
-module.exports = { yourCustomAction, saveTheName }
+
+
+
+
+module.exports = { yourCustomAction, saveTheName, getUserInfoFromPrime }

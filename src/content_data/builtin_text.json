@@ -25,5 +25,135 @@
     },
     "createdBy": "admin",
     "createdOn": "2018-07-18T05:40:05.470Z"
+  },
+  {
+    "id": "builtin_text-QQO4Fs",
+    "formData": {
+      "text": "find users or save new user?",
+      "variations": [
+        "find user in pilot service by user id",
+        "save new user in postgress"
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-18T07:33:15.495Z"
+  },
+  {
+    "id": "builtin_text-xQ1niO",
+    "formData": {
+      "text": "enter user id to be searched",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-18T07:34:41.005Z"
+  },
+  {
+    "id": "builtin_text-EMlKsG",
+    "formData": {
+      "text": "finding user {{event.txt}}, please wait",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-18T07:35:19.468Z"
+  },
+  {
+    "id": "builtin_text-Ad3WWe",
+    "formData": {
+      "text": "hello rivigo",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T09:16:56.131Z"
+  },
+  {
+    "id": "builtin_text-O5dqNi",
+    "formData": {
+      "text": "hello zoom",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T09:17:31.220Z"
+  },
+  {
+    "id": "builtin_text-ZD33lK",
+    "formData": {
+      "text": "client name passed is undefined",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T09:25:19.959Z"
+  },
+  {
+    "id": "builtin_text-S_f6N3",
+    "formData": {
+      "text": "Please wait for authentication",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T11:57:35.659Z"
+  },
+  {
+    "id": "builtin_text-ZTSu0F",
+    "formData": {
+      "text": "Please enter phone number",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T12:02:18.940Z"
+  },
+  {
+    "id": "builtin_text-hiMfyB",
+    "formData": {
+      "text": "function call possible",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T12:09:12.282Z"
+  },
+  {
+    "id": "builtin_text-pLjkkg",
+    "formData": {
+      "text": "Please Enter OTP",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T12:14:59.269Z"
+  },
+  {
+    "id": "builtin_text-DlWXrN",
+    "formData": {
+      "text": "Incorrect authentication",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T12:31:29.648Z"
+  },
+  {
+    "id": "builtin_text-3mUh7K",
+    "formData": {
+      "text": "Already authenticated",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T12:51:47.060Z"
+  },
+  {
+    "id": "builtin_text-frrw10",
+    "formData": {
+      "text": "Hello Rivigo, please wait......",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-20T13:28:37.416Z"
+  },
+  {
+    "id": "builtin_text-16g1ak",
+    "formData": {
+      "text": "Welcome Zoom!!",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-07-23T05:00:52.752Z"
   }
 ]

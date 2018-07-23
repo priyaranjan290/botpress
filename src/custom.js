@@ -6,7 +6,12 @@ const renderers = require('./renderers')
 
 // If you want to split your actions into multiple files
 // Add the extra files here
-const actionFiles = ['./actions.js']
+const actionFiles = [
+    './actions/actions.js',
+    './actions/validationAction.js',
+    './actions/auth/authService.js',
+    './actions/classification/classifyClients.js'
+]
 
 module.exports = async bp => {
   await registerRenderers(bp)

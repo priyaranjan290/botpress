@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "catchAll": {},
-  "startNode": "entry",
+  "startNode": "main_entry",
   "nodes": [
     {
       "id": "e769d2f99a",
@@ -16,7 +16,7 @@
       "next": [
         {
           "condition": "true",
-          "node": "save_the_name"
+          "node": "find_or_save"
         }
       ]
     },
@@ -36,6 +36,70 @@
         "saveTheName {\"name\":\"{{event.text}}\"}",
         "say #!builtin_text-bhz_Ux"
       ]
+    },
+    {
+      "id": "80e5be365f",
+      "name": "find_or_save",
+      "next": [
+        {
+          "condition": "{{event.text}} === yes",
+          "node": "find_user_from_prime"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-QQO4Fs",
+        "say #!optionRenderer-LlHANG"
+      ],
+      "onReceive": []
+    },
+    {
+      "id": "544265c60a",
+      "name": "find_user_from_prime",
+      "next": [
+        {
+          "condition": "true",
+          "node": "find_or_save"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-xQ1niO"
+      ],
+      "onReceive": [
+        "say #!builtin_text-EMlKsG",
+        "validateUserId {\"userId\":\"{{event.text}}\"}",
+        "getUserInfoFromPrime {\"userId\":\"{{event.text}}\"}"
+      ]
+    },
+    {
+      "id": "84f8adda2a",
+      "name": "main_entry",
+      "onEnter": [
+        "isValidClient {\"client\":\"ZOOM\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "state.isValidClient === false",
+          "node": "not_valid_client"
+        },
+        {
+          "condition": "state.clientCode === \"RIVIGO\"",
+          "node": "rivigo_main.flow.json"
+        },
+        {
+          "condition": "state.clientCode === \"ZOOM\"",
+          "node": "zoom_main.flow.json"
+        }
+      ]
+    },
+    {
+      "id": "ae3f07972a",
+      "name": "not_valid_client",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-ZD33lK"
+      ],
+      "onReceive": null
     }
   ]
 }
