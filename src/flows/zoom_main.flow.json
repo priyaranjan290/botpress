@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "a9d57140f1",
+      "name": "entry",
+      "onEnter": [
+        "authenticateUser {}",
+        "say #!builtin_text-O5dqNi"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "state.isAuthenticated === false",
+          "node": "auth_main.flow.json"
+        },
+        {
+          "condition": "state.isAuthenticated === true",
+          "node": "node-0a20"
+        }
+      ]
+    },
+    {
+      "id": "8027de95e6",
+      "name": "node-0a20",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-16g1ak"
+      ],
+      "onReceive": null
+    }
+  ]
+}

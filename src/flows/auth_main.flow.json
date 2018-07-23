@@ -1,0 +1,108 @@
+{
+  "version": "0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "auth_start",
+  "nodes": [
+    {
+      "id": "3624e36874",
+      "name": "auth_start",
+      "next": [
+        {
+          "condition": "state.isGuest === true",
+          "node": "enter_phone_number"
+        },
+        {
+          "condition": "state.isGuest === false",
+          "node": "authenticated_user"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-S_f6N3",
+        "authenticateUser {}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "4c247d8116",
+      "name": "phone_number_validation",
+      "next": [
+        {
+          "condition": "state.isValidPhoneNumber === true",
+          "node": "enter_otp"
+        },
+        {
+          "condition": "state.isValidPhoneNumber === false",
+          "node": "enter_phone_number"
+        }
+      ],
+      "onEnter": [
+        "validatePhoneNumber {\"inputPhoneNumber\":\"{{event.text}}\"}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "48fe213cb6",
+      "name": "otp_validation",
+      "next": [
+        {
+          "condition": "state.isValidOtp === true",
+          "node": "authenticated_user"
+        },
+        {
+          "condition": "state.isValidOtp === false",
+          "node": "enter_otp"
+        }
+      ],
+      "onEnter": [
+        "validateOtp {\"otp\":\"{{event.text}}\"}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "80c88a9c12",
+      "name": "enter_phone_number",
+      "next": [
+        {
+          "condition": "true",
+          "node": "phone_number_validation"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ZTSu0F"
+      ],
+      "onReceive": []
+    },
+    {
+      "id": "8269338f48",
+      "name": "authenticated_user",
+      "next": [
+        {
+          "condition": "true",
+          "node": "#"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-3mUh7K",
+        "setAutheticated {\"isAuthDone\":\"true\"}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "b0b48d3205",
+      "name": "enter_otp",
+      "next": [
+        {
+          "condition": "true",
+          "node": "otp_validation"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-pLjkkg"
+      ],
+      "onReceive": []
+    }
+  ]
+}

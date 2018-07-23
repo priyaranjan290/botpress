@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "catchAll": {},
+  "startNode": "checking_authenticate",
+  "nodes": [
+    {
+      "id": "f5bd2ba49b",
+      "name": "entry",
+      "onEnter": [
+        "say #!translatedText-GhLHBu",
+        "say #!translatedText-Ti0CJf"
+      ],
+      "onReceive": null,
+      "next": []
+    },
+    {
+      "id": "b174f57479",
+      "name": "checking_authenticate",
+      "next": [
+        {
+          "condition": "state.isAuthenticated === true",
+          "node": "entry"
+        },
+        {
+          "condition": "state.isAuthenticated === false",
+          "node": "auth_main.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-frrw10",
+        "authenticateUser {}"
+      ],
+      "onReceive": null
+    }
+  ]
+}
